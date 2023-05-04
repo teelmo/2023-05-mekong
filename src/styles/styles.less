@@ -26,7 +26,7 @@
         position: relative;
         overflow: hidden;
         &::before {
-          background-image: url('../assets/img/mekong_padot_sivujoet-min.jpg');
+          background-image: url('../assets/img/mekong_padot_1.jpg');
           background-position: 50% 50%;
           background-repeat: no-repeat;
           background-size: auto 100%;
@@ -40,6 +40,12 @@
         }
         &.page1 {
           &::before {
+            background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+          }
+        }
+        &.page2 {
+          &::before {
+            background-image: url('../assets/img/mekong_padot_paauoma.jpg');
             background-position: 50% 0;
             height: 200%;
             margin-left: -50%;
@@ -47,8 +53,9 @@
             width: 200%;
           }
         }
-        &.page2 {
+        &.page3 {
           &::before {
+            background-image: url('../assets/img/mekong_padot_paauoma.jpg');
             background-position: 50% 0;
             height: 200%;
             margin-left: calc(100vw - 165vw);
@@ -56,13 +63,26 @@
             width: 200%;
           }
         }
-        &.page3 {
+        &.page4 {
           &::before {
+            background-image: url('../assets/img/mekong_padot_paauoma.jpg');
             background-position: 50% 0;
             height: 250%;
             margin-left: calc(100vw - 190vw);
             margin-top: calc(100vh - 175vh);
             width: 250%;
+          }
+        }
+        &.page5,
+        &.page6 {
+          &::before {
+            background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+          }
+        }
+        &.page7,
+        &.page8 {
+          &::before {
+            background-image: url('../assets/img/mekong_padot_sivujoet-min.jpg');
           }
         }
       }
