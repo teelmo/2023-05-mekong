@@ -1,0 +1,94 @@
+@import url('../font/fonts.css');
+
+#app-root-2023-05-mekong *, ::before, ::after {
+  box-sizing: content-box;
+}
+
+@import 'yddrasil_overrides.less';
+#Vesi {
+  display: none;
+}
+#app-root-2023-05-mekong .app {
+  box-sizing: border-box;
+  font-family: Open Sans;
+  margin: auto auto;
+  width: 100%;
+  p {
+    max-width: 600px;
+    margin: auto auto 20px auto;
+    padding: 5px;
+  }
+  .map_container {
+    margin: 40px auto;
+    .map_texts_container {
+      .map {
+        min-height: 100%;
+        position: relative;
+        overflow: hidden;
+        &::before {
+          background-image: url('../assets/img/mekong_padot_sivujoet-min.jpg');
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          content: '';
+          height: 100%;
+          left: 0;
+          position: fixed;
+          transition: all 1s;
+          width: 100%;
+          z-index: -1;
+        }
+        &.page1 {
+          &::before {
+            background-position: 50% 0;
+            height: 200%;
+            margin-left: -50%;
+            margin-top: -10%;
+            width: 200%;
+          }
+        }
+        &.page2 {
+          &::before {
+            background-position: 50% 0;
+            height: 200%;
+            margin-left: calc(100vw - 165vw);
+            margin-top: calc(100vh - 200vh);
+            width: 200%;
+          }
+        }
+        &.page3 {
+          &::before {
+            background-position: 50% 0;
+            height: 250%;
+            margin-left: calc(100vw - 190vw);
+            margin-top: calc(100vh - 175vh);
+            width: 250%;
+          }
+        }
+      }
+      .map_text_container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        min-height: 150vh;
+        vertical-align: middle;
+        width: 100%;
+        &.map_text_container_0 {
+          min-height: 75vh;
+        }
+        .text {
+          background-color: rgba(255, 255, 255, 0.9);
+          box-sizing: border-box;
+          font-size: 26px;
+          max-width: 600px;
+          min-width: 300px;
+          padding: 30px;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@import 'basics.less';
