@@ -19,6 +19,11 @@ function App() {
   const [offset, setOffset] = useState(0);
   const [mapOffset, setMapOffset] = useState(0);
 
+  const preloadImage = (im_url) => {
+    const img = new Image();
+    img.src = im_url;
+  };
+
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
     window.removeEventListener('scroll', onScroll);
@@ -44,6 +49,10 @@ function App() {
       if (process.env.NODE_ENV === 'production') return 'https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/data';
       return 'assets/data';
     };
+
+    for (let i = 0; i <= 11; i++) {
+      preloadImage(`https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_${i}.jpg`);
+    }
 
     try {
       Promise.all([

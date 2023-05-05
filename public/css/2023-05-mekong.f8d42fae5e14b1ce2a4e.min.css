@@ -76,7 +76,7 @@
   overflow: hidden;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map::before {
-  background-image: url('../assets/img/mekong_padot_1.jpg');
+  background-image: url('../assets/img/mekong_kartta_1.jpg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -89,10 +89,10 @@
   z-index: -1;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page1::before {
-  background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+  background-image: url('../assets/img/mekong_kartta_2.jpg');
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page2::before {
-  background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+  background-image: url('../assets/img/mekong_kartta_5.jpg');
   background-position: 50% 0;
   height: 200%;
   margin-left: -50%;
@@ -100,7 +100,7 @@
   width: 200%;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page3::before {
-  background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+  background-image: url('../assets/img/mekong_kartta_6.jpg');
   background-position: 50% 0;
   height: 200%;
   margin-left: calc(100vw - 165vw);
@@ -108,20 +108,22 @@
   width: 200%;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page4::before {
-  background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+  background-image: url('../assets/img/mekong_kartta_3.jpg');
   background-position: 50% 0;
   height: 250%;
   margin-left: calc(100vw - 190vw);
-  margin-top: calc(100vh - 175vh);
+  margin-top: calc(100vh - 200vh);
   width: 250%;
 }
-#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page5::before,
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page5::before {
+  background-image: url('../assets/img/mekong_kartta_6.jpg');
+}
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page6::before {
-  background-image: url('../assets/img/mekong_padot_paauoma.jpg');
+  background-image: url('../assets/img/mekong_kartta_7.jpg');
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page7::before,
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page8::before {
-  background-image: url('../assets/img/mekong_padot_sivujoet-min.jpg');
+  background-image: url('../assets/img/mekong_kartta_11.jpg');
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container {
   align-items: center;
