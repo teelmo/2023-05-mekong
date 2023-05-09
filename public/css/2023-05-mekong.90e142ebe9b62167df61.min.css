@@ -1,0 +1,189 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,700.css'); */
+
+/* roboto-regular - latin */
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* roboto-italic - latin */
+      @font-face {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 400;
+	src: local(''),
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* roboto-500 - latin */
+      @font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	src: local(''),
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* roboto-500italic - latin */
+      @font-face {
+	font-family: 'Roboto';
+	font-style: italic;
+	font-weight: 500;
+	src: local(''),
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* roboto-700 - latin */
+      @font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+	     url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/font/roboto-v30-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+#app-root-2023-05-mekong *,
+::before,
+::after {
+  box-sizing: content-box;
+}
+.ydd-article {
+  overflow: visible !important;
+}
+#app-root-2023-05-mekong .app {
+  box-sizing: border-box;
+  font-family: Open Sans;
+  margin: 40px auto;
+  width: 100%;
+}
+#app-root-2023-05-mekong .app p {
+  box-sizing: border-box;
+  margin: auto auto 20px auto;
+  max-width: 600px;
+  padding: 5px;
+}
+#app-root-2023-05-mekong .app .map_container {
+  margin: 20px auto -135px auto;
+  overflow: hidden;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container {
+  position: relative;
+  overflow: hidden;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map {
+  height: 100vh;
+  position: relative;
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_1.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  content: '';
+  display: block;
+  transition: all 1s;
+  width: 100vw;
+  z-index: 1;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.absolute {
+  height: 100vh;
+  position: absolute;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.fixed {
+  height: 100vh;
+  position: fixed;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page1 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_2.jpg');
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page2 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_5.jpg');
+  background-position: 50% 0;
+  height: 200%;
+  margin-left: -50%;
+  margin-top: -10%;
+  width: 200%;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page3 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
+  background-position: 50% 0;
+  height: 200%;
+  margin-left: calc(100vw - 165vw);
+  margin-top: calc(100vh - 200vh);
+  width: 200%;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page4 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_12.jpg');
+  background-position: 50% 0;
+  height: 250%;
+  margin-left: calc(100vw - 190vw);
+  margin-top: calc(100vh - 200vh);
+  width: 250%;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page5 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page6 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_7.jpg');
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page7,
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page8 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_11.jpg');
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  height: 150vh;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  z-index: 2;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container.map_text_container_0 {
+  height: 75vh;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container .text {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  color: #000;
+  font-size: 26px;
+  max-width: 600px;
+  min-width: 300px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+}
+/* General styles */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.ss-terms {
+  margin: 40px auto auto auto;
+  max-width: 450px;
+}
+.meta {
+  color: #333;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 10px 40px 10px;
+}
+.clear_both {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
