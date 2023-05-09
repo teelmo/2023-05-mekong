@@ -33,23 +33,42 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const mapContTop = mapContRef.current?.getBoundingClientRect().top || window.innerHeight;
+    // const mapContTop = mapContRef.current?.getBoundingClientRect().top || window.innerHeight;
+    const mapContY = mapContRef.current?.getBoundingClientRect().y || window.innerHeight;
     const mapContHeight = mapContRef.current?.getBoundingClientRect().height || 0;
     const mapHeight = mapRef.current?.getBoundingClientRect().height || 0;
+
+    console.log(`scroll postion: ${offset}`);
+    console.log(`kartan alku: ${window.pageYOffset + mapContY}`);
+    console.log(`kartan loppu: ${window.pageYOffset + mapContY + mapContHeight}`);
+
     if (mapRef.current) {
-      if (offset > mapContHeight + mapHeight) {
-        mapRef.current.classList.add('absolute');
-        mapRef.current.classList.remove('fixed');
-        setMapOffset(false);
-      } else if (mapContTop < 0) {
-        mapRef.current.classList.add('fixed');
-        mapRef.current.classList.remove('absolute');
-        setMapOffset(0);
-      } else {
+      if (offset < (window.pageYOffset + mapContY)) { // Beginning
+        console.log('Beginning');
         mapRef.current?.classList.add('absolute');
         mapRef.current?.classList.remove('fixed');
         setMapOffset(0);
+      } else if (offset > (window.pageYOffset + mapContY + mapContHeight - mapHeight)) { // End
+        console.log('End');
+        mapRef.current.classList.add('absolute');
+        mapRef.current.classList.remove('fixed');
+        setMapOffset(false);
+      } else {
+        console.log('Middle');
+        mapRef.current.classList.add('fixed');
+        mapRef.current.classList.remove('absolute');
+        setMapOffset(0);
       }
+
+      // } else if (mapContTop < 0) {
+      //   console.log('keskellä');
+      //
+      //
+      //   setMapOffset(0);
+      // } else {
+      //   console.log('alku');
+
+      // }
     }
   }, [offset]);
 
@@ -108,7 +127,7 @@ function App() {
         data && (
           <div className="map_container" ref={mapContRef}>
             <div className="map_texts_container">
-              <div className="map absolute" ref={mapRef} style={(mapOffset !== false) ? { top: mapOffset } : { bottom: '155px' }} />
+              <div className="map absolute" ref={mapRef} style={(mapOffset !== false) ? { top: mapOffset } : { bottom: '0' }} />
               {
                 data.views.map((el, i) => (
                   <div className={`map_text_container map_text_container_${i}`} key={uuidv4()}>

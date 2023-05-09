@@ -66,7 +66,7 @@
   padding: 5px;
 }
 #app-root-2023-05-mekong .app .map_container {
-  margin: 20px auto -135px auto;
+  margin: 20px auto 20px auto;
   overflow: hidden;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container {
@@ -94,32 +94,44 @@
   height: 100vh;
   position: fixed;
 }
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map.page0 {
+  background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_1.jpg');
+}
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page1 {
   background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_2.jpg');
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page2 {
   background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_5.jpg');
-  background-position: 50% 0;
-  height: 200%;
-  margin-left: -50%;
-  margin-top: -10%;
-  width: 200%;
+}
+@media all and (min-width: 600px) {
+  #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page2 {
+    height: 200%;
+    margin-left: -50%;
+    margin-top: -10%;
+    width: 200%;
+  }
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page3 {
   background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
-  background-position: 50% 0;
-  height: 200%;
-  margin-left: calc(100vw - 165vw);
-  margin-top: calc(100vh - 200vh);
-  width: 200%;
+}
+@media all and (min-width: 600px) {
+  #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page3 {
+    height: 200%;
+    margin-left: calc(100vw - 165vw);
+    margin-top: calc(100vh - 200vh);
+    width: 200%;
+  }
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page4 {
   background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_12.jpg');
-  background-position: 50% 0;
-  height: 250%;
-  margin-left: calc(100vw - 190vw);
-  margin-top: calc(100vh - 200vh);
-  width: 250%;
+}
+@media all and (min-width: 600px) {
+  #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page4 {
+    height: 250%;
+    margin-left: calc(100vw - 190vw);
+    margin-top: calc(100vh - 200vh);
+    width: 250%;
+  }
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map.page5 {
   background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
@@ -134,9 +146,9 @@
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container {
   align-items: center;
   display: flex;
-  overflow: hidden;
-  justify-content: center;
   height: 150vh;
+  justify-content: center;
+  overflow: hidden;
   position: relative;
   vertical-align: middle;
   width: 100%;
@@ -144,6 +156,9 @@
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container.map_text_container_0 {
   height: 75vh;
+}
+#app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container.map_text_container_8 {
+  height: 100vh;
 }
 #app-root-2023-05-mekong .app .map_container .map_texts_container .map_text_container .text {
   background-color: rgba(255, 255, 255, 0.9);
