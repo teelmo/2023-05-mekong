@@ -17,11 +17,12 @@ function App() {
   const mapContRef = useRef();
 
   const [offset, setOffset] = useState(0);
+  // eslint-disable-next-line
   const [mapOffset, setMapOffset] = useState(0);
 
-  const preloadImage = (im_url) => {
+  const preloadImage = (imageUrl) => {
     const img = new Image();
-    img.src = im_url;
+    img.src = imageUrl;
   };
 
   useEffect(() => {
@@ -34,12 +35,21 @@ function App() {
   useEffect(() => {
     const mapContTop = mapContRef.current?.getBoundingClientRect().top || window.innerHeight;
     const mapContHeight = mapContRef.current?.getBoundingClientRect().height || 0;
-    const mapContY = mapContRef.current?.getBoundingClientRect().y || 0;
-
-    if (offset > (window.pageYOffset + mapContTop + mapContHeight - window.innerHeight)) {
-      setMapOffset(-(offset - mapContHeight + window.innerHeight));
-    } else {
-      setMapOffset(mapContY < 0 ? -(window.pageYOffset + mapContTop) : -offset);
+    const mapHeight = mapRef.current?.getBoundingClientRect().height || 0;
+    if (mapRef.current) {
+      if (offset > mapContHeight + mapHeight) {
+        mapRef.current.classList.add('absolute');
+        mapRef.current.classList.remove('fixed');
+        setMapOffset(false);
+      } else if (mapContTop < 0) {
+        mapRef.current.classList.add('fixed');
+        mapRef.current.classList.remove('absolute');
+        setMapOffset(0);
+      } else {
+        mapRef.current?.classList.add('absolute');
+        mapRef.current?.classList.remove('fixed');
+        setMapOffset(0);
+      }
     }
   }, [offset]);
 
@@ -50,7 +60,7 @@ function App() {
       return 'assets/data';
     };
 
-    for (let i = 0; i <= 11; i++) {
+    for (let i = 1; i <= 12; i++) {
       preloadImage(`https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_${i}.jpg`);
     }
 
@@ -71,7 +81,11 @@ function App() {
   }, []);
 
   const changeVisible = (i) => {
-    mapRef.current.classList.value = (`map page${i}`);
+    if (mapRef.current.classList.value.includes('fixed')) {
+      mapRef.current.classList.value = `map fixed page${i}`;
+    } else if (mapRef.current.classList.value.includes('absolute')) {
+      mapRef.current.classList.value = `map absolute page${i}`;
+    }
   };
 
   return (
@@ -94,7 +108,7 @@ function App() {
         data && (
           <div className="map_container" ref={mapContRef}>
             <div className="map_texts_container">
-              <div className="map" ref={mapRef} style={{ top: mapOffset }} />
+              <div className="map absolute" ref={mapRef} style={(mapOffset !== false) ? { top: mapOffset } : { bottom: '155px' }} />
               {
                 data.views.map((el, i) => (
                   <div className={`map_text_container map_text_container_${i}`} key={uuidv4()}>
@@ -107,7 +121,6 @@ function App() {
                       }}
                     </IsVisible>
                   </div>
-
                 ))
               }
             </div>

@@ -3,106 +3,99 @@
 #app-root-2023-05-mekong *, ::before, ::after {
   box-sizing: content-box;
 }
-
 @import 'yddrasil_overrides.less';
-#Vesi {
-  display: none;
-}
 #app-root-2023-05-mekong .app {
   box-sizing: border-box;
   font-family: Open Sans;
-  margin: auto auto;
+  margin: 40px auto;
   width: 100%;
   p {
-    max-width: 600px;
+    box-sizing: border-box;
     margin: auto auto 20px auto;
+    max-width: 600px;
     padding: 5px;
   }
   .map_container {
-    margin: 40px auto;
+    margin: 20px auto -135px auto;
+    overflow: hidden;
     .map_texts_container {
+      position: relative;
+      overflow: hidden;
       .map {
-        min-height: 100%;
+        height: 100vh;
         position: relative;
-        overflow: hidden;
-        &::before {
-          background-image: url('../assets/img/mekong_kartta_1.jpg');
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
-          background-size: auto 100%;
-          content: '';
-          height: 100%;
-          left: 0;
+        background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_1.jpg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        content: '';
+        display: block;
+        transition: all 1s;
+        width: 100vw;
+        z-index: 1;
+        &.absolute {
+          height: 100vh;
+          position: absolute;
+        }
+        &.fixed {
+          height: 100vh;
           position: fixed;
-          transition: all 1s;
-          width: 100%;
-          z-index: -1;
         }
         &.page1 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_2.jpg');
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_2.jpg');
         }
         &.page2 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_5.jpg');
-            background-position: 50% 0;
-            height: 200%;
-            margin-left: -50%;
-            margin-top: -10%;
-            width: 200%;
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_5.jpg');
+          background-position: 50% 0;
+          height: 200%;
+          margin-left: -50%;
+          margin-top: -10%;
+          width: 200%;
         }
         &.page3 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_6.jpg');
-            background-position: 50% 0;
-            height: 200%;
-            margin-left: calc(100vw - 165vw);
-            margin-top: calc(100vh - 200vh);
-            width: 200%;
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
+          background-position: 50% 0;
+          height: 200%;
+          margin-left: calc(100vw - 165vw);
+          margin-top: calc(100vh - 200vh);
+          width: 200%;
         }
         &.page4 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_3.jpg');
-            background-position: 50% 0;
-            height: 250%;
-            margin-left: calc(100vw - 190vw);
-            margin-top: calc(100vh - 200vh);
-            width: 250%;
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_12.jpg');
+          background-position: 50% 0;
+          height: 250%;
+          margin-left: calc(100vw - 190vw);
+          margin-top: calc(100vh - 200vh);
+          width: 250%;
         }
         &.page5 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_6.jpg');
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_6.jpg');
         }
         &.page6 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_7.jpg');
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_7.jpg');
         }
         &.page7,
         &.page8 {
-          &::before {
-            background-image: url('../assets/img/mekong_kartta_11.jpg');
-          }
+          background-image: url('https://lusi-dataviz.ylestatic.fi/2023-05-mekong/assets/img/mekong_kartta_11.jpg');
         }
       }
       .map_text_container {
         align-items: center;
         display: flex;
+        overflow: hidden;
         justify-content: center;
-        min-height: 150vh;
+        height: 150vh;
+        position: relative;
         vertical-align: middle;
         width: 100%;
+        z-index: 2;
         &.map_text_container_0 {
-          min-height: 75vh;
+          height: 75vh;
         }
         .text {
           background-color: rgba(255, 255, 255, 0.9);
           box-sizing: border-box;
+          color: #000;
           font-size: 26px;
           max-width: 600px;
           min-width: 300px;
